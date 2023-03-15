@@ -16,9 +16,9 @@
 		8544CC3D2968532100B968AB /* SoundBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544CC3C2968532100B968AB /* SoundBoardTests.swift */; };
 		8544CC472968532100B968AB /* SoundBoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544CC462968532100B968AB /* SoundBoardUITests.swift */; };
 		8544CC492968532100B968AB /* SoundBoardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544CC482968532100B968AB /* SoundBoardUITestsLaunchTests.swift */; };
-		8544CC59296854AF00B968AB /* SoundboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544CC58296854AF00B968AB /* SoundboardCell.swift */; };
 		8544CC5D296857F400B968AB /* Exemple2%Bonk Sound Effect #2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8544CC5B296857F300B968AB /* Exemple2%Bonk Sound Effect #2.mp3 */; };
 		8544CC5E296857F400B968AB /* Exemple%Mina... GANBATTE NE!.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8544CC5C296857F300B968AB /* Exemple%Mina... GANBATTE NE!.mp3 */; };
+		85DC62A029C2024C00BA12F6 /* SoundboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC629F29C2024C00BA12F6 /* SoundboardCollectionViewCell.swift */; };
 		85FA193929B0F44000BD9B7A /* Exemple%Antoine Daniel - Rire de droite (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85FA193729B0F44000BD9B7A /* Exemple%Antoine Daniel - Rire de droite (320 kbps).mp3 */; };
 		85FA193A29B0F44000BD9B7A /* Exemple%OK LETS GO (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85FA193829B0F44000BD9B7A /* Exemple%OK LETS GO (320 kbps).mp3 */; };
 /* End PBXBuildFile section */
@@ -54,9 +54,9 @@
 		8544CC422968532100B968AB /* SoundBoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundBoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8544CC462968532100B968AB /* SoundBoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBoardUITests.swift; sourceTree = "<group>"; };
 		8544CC482968532100B968AB /* SoundBoardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBoardUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8544CC58296854AF00B968AB /* SoundboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundboardCell.swift; sourceTree = "<group>"; };
 		8544CC5B296857F300B968AB /* Exemple2%Bonk Sound Effect #2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exemple2%Bonk Sound Effect #2.mp3"; sourceTree = "<group>"; };
 		8544CC5C296857F300B968AB /* Exemple%Mina... GANBATTE NE!.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exemple%Mina... GANBATTE NE!.mp3"; sourceTree = "<group>"; };
+		85DC629F29C2024C00BA12F6 /* SoundboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundboardCollectionViewCell.swift; sourceTree = "<group>"; };
 		85FA193729B0F44000BD9B7A /* Exemple%Antoine Daniel - Rire de droite (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exemple%Antoine Daniel - Rire de droite (320 kbps).mp3"; sourceTree = "<group>"; };
 		85FA193829B0F44000BD9B7A /* Exemple%OK LETS GO (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exemple%OK LETS GO (320 kbps).mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,7 +158,7 @@
 		8544CC572968547C00B968AB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8544CC58296854AF00B968AB /* SoundboardCell.swift */,
+				85DC629F29C2024C00BA12F6 /* SoundboardCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8544CC59296854AF00B968AB /* SoundboardCell.swift in Sources */,
+				85DC62A029C2024C00BA12F6 /* SoundboardCollectionViewCell.swift in Sources */,
 				8544CC2A2968531B00B968AB /* SoundboardViewController.swift in Sources */,
 				8544CC262968531B00B968AB /* AppDelegate.swift in Sources */,
 				8544CC282968531B00B968AB /* SceneDelegate.swift in Sources */,
