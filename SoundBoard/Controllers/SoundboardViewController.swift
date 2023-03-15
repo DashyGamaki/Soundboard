@@ -4,19 +4,29 @@ import AVFoundation
 class SoundboardViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var soundTableView: UITableView!
+    @IBOutlet weak var soundCollectionView: UICollectionView!
     @IBOutlet weak var menuButton: UIButton!
     
     private var soundList: [String] = []
     private var players: [AVAudioPlayer] = []
+    lazy var flowLayout: UICollectionViewFlowLayout = initalizeFlowLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLabel()
         setupMenuButton()
         setupSoundList()
-        soundTableView.dataSource = self
-        soundTableView.delegate = self
+        soundCollectionView.dataSource = self
+        soundCollectionView.delegate = self
+        soundCollectionView.collectionViewLayout = flowLayout
+    }
+    
+    private func initalizeFlowLayout() -> UICollectionViewFlowLayout{
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 5
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return layout
     }
     
     private func setupLabel(){
@@ -36,9 +46,11 @@ class SoundboardViewController: UIViewController {
                 soundList.append(fileName)
             }
         }
+        titleLabel.text = folderName ?? "Soundboard"
+        
         //sort alpabetically
         soundList.sort(by: {$0 < $1})
-        soundTableView.reloadData()
+        soundCollectionView.reloadData()
     }
     
     private func playSound(soundName: String){
@@ -101,27 +113,36 @@ class SoundboardViewController: UIViewController {
 
 }
 
-extension SoundboardViewController: UITableViewDataSource, UITableViewDelegate{
+extension SoundboardViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return soundList.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "soundCellId", for: indexPath) as? SoundboardCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "soundCellId", for: indexPath) as? SoundboardCollectionViewCell {
             var fileName = soundList[indexPath.row]
             if(fileName.contains("%")){
                 fileName = fileName.components(separatedBy: "%")[1]
             }
-            cell.titleLabel.text = fileName
+            cell.soundNameLabel.text = fileName
             return cell
         }
-        return UITableViewCell()
+        return UICollectionViewCell()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         playSound(soundName: soundList[indexPath.row])
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width
+        let numberOfItemsPerRow: CGFloat = 3
+        let spacing: CGFloat = flowLayout.minimumInteritemSpacing
+        let availableWidth = width - spacing * (numberOfItemsPerRow + 1)
+        let itemDimension = floor((availableWidth - 10) / numberOfItemsPerRow)
+        return CGSize(width: itemDimension, height: itemDimension)
+    }
+
 }
 
