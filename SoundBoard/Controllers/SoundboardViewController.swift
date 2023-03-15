@@ -36,6 +36,8 @@ class SoundboardViewController: UIViewController {
                 soundList.append(fileName)
             }
         }
+        titleLabel.text = folderName ?? "Soundboard"
+        
         //sort alpabetically
         soundList.sort(by: {$0 < $1})
         soundTableView.reloadData()
