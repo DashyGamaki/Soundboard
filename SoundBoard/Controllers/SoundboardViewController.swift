@@ -11,9 +11,16 @@ class SoundboardViewController: UIViewController {
     private var soundList: [String] = []
     private var players: [AVAudioPlayer] = []
     lazy var flowLayout: UICollectionViewFlowLayout = initalizeFlowLayout()
+    private var soundMainFolder: URL? = nil
+    private var soundSubFolders: [URL]? = nil
+    
+    private var appFolders = try?
+    FileManager.default.contentsOfDirectory(at: Bundle.main.resourceURL ?? .documentsDirectory, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles]).filter(\.hasDirectoryPath)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeFoldersURLs()
         setupLabel()
         setupMenuButton()
         setupSoundList()
@@ -36,18 +43,29 @@ class SoundboardViewController: UIViewController {
     
     private func setupSoundList(folderName: String? = nil){
         soundList = []
-        let files = Bundle.main.paths(forResourcesOfType: "mp3", inDirectory: nil)
-        for file in files{
-            let fileName = (file.components(separatedBy: "/").last ?? "").replacingOccurrences(of: ".mp3", with: "")
-            if(folderName != nil){
-                if(fileName.components(separatedBy: "%")[0] == folderName){
+        if(folderName == nil){
+            guard let soundSubFolders else{
+                return
+            }
+            for folder in soundSubFolders{
+                let files = Bundle.main.paths(forResourcesOfType: "mp3", inDirectory: "Sounds/\(folder.lastPathComponent)")
+                for file in files{
+                    let fileName = (file.components(separatedBy: "/").last ?? "").replacingOccurrences(of: ".mp3", with: "")
                     soundList.append(fileName)
                 }
-            }else{
+            }
+        }else{
+            guard let folderName else{
+                return
+            }
+            let files = Bundle.main.paths(forResourcesOfType: "mp3", inDirectory: "Sounds/\(folderName)")
+            for file in files{
+                let fileName = (file.components(separatedBy: "/").last ?? "").replacingOccurrences(of: ".mp3", with: "")
                 soundList.append(fileName)
             }
         }
-        titleLabel.text = folderName ?? "Soundboard"
+
+        titleLabel.text = folderName ?? "All Sounds"
         
         //sort alpabetically
         soundList.sort(by: {$0 < $1})
@@ -87,6 +105,15 @@ class SoundboardViewController: UIViewController {
         menuButton.menu = UIMenu(title: "Folders", children: getSoundFoldersAsMenuArray())
     }
     
+    
+    private func initializeFoldersURLs(){
+        guard let soundMainFolder = appFolders?.first(where: {$0.absoluteString.contains("Sounds")}) else{
+            return
+        }
+        soundSubFolders = try? FileManager.default.contentsOfDirectory(at: soundMainFolder, includingPropertiesForKeys: [URLResourceKey.isDirectoryKey], options: [])
+    }
+    
+    
     private func getSoundFoldersAsMenuArray() -> [UIAction]{
         let folderNamesArray = getSoundFoldersNames()
         var menuActionArray: [UIAction] = [UIAction(title: "All", handler: { _ in
@@ -102,13 +129,15 @@ class SoundboardViewController: UIViewController {
     
     private func getSoundFoldersNames() -> [String]{
         var folderArray: [String] = []
-        let files = Bundle.main.paths(forResourcesOfType: "mp3", inDirectory: nil)
-        for file in files{
-            let fileName = (file.components(separatedBy: "/").last ?? "").replacingOccurrences(of: ".mp3", with: "")
-            if(fileName.contains("%") && !folderArray.contains(where: {$0 == fileName.components(separatedBy: "%")[0]})){
-                folderArray.append(fileName.components(separatedBy: "%")[0])
+        guard let soundSubFolders else {
+            return []
+        }
+        for folder in soundSubFolders{
+            if(!folder.absoluteString.contains(".mp3")){
+                folderArray.append(folder.lastPathComponent)
             }
         }
+        folderArray.sort(by: {$0 < $1})
         return folderArray
     }
     
