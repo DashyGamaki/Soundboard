@@ -16,11 +16,9 @@
 		8544CC3D2968532100B968AB /* SoundBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544CC3C2968532100B968AB /* SoundBoardTests.swift */; };
 		8544CC472968532100B968AB /* SoundBoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544CC462968532100B968AB /* SoundBoardUITests.swift */; };
 		8544CC492968532100B968AB /* SoundBoardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544CC482968532100B968AB /* SoundBoardUITestsLaunchTests.swift */; };
-		8544CC5D296857F400B968AB /* Exemple2%Bonk Sound Effect #2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8544CC5B296857F300B968AB /* Exemple2%Bonk Sound Effect #2.mp3 */; };
-		8544CC5E296857F400B968AB /* Exemple%Mina... GANBATTE NE!.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8544CC5C296857F300B968AB /* Exemple%Mina... GANBATTE NE!.mp3 */; };
 		85DC62A029C2024C00BA12F6 /* SoundboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC629F29C2024C00BA12F6 /* SoundboardCollectionViewCell.swift */; };
-		85FA193929B0F44000BD9B7A /* Exemple%Antoine Daniel - Rire de droite (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85FA193729B0F44000BD9B7A /* Exemple%Antoine Daniel - Rire de droite (320 kbps).mp3 */; };
-		85FA193A29B0F44000BD9B7A /* Exemple%OK LETS GO (320 kbps).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85FA193829B0F44000BD9B7A /* Exemple%OK LETS GO (320 kbps).mp3 */; };
+		85DC62BD29C20A6200BA12F6 /* J'adore rire !.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DC62BB29C20A6200BA12F6 /* J'adore rire !.mp3 */; };
+		85DC62BE29C20A6200BA12F6 /* Rire de droite.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DC62BC29C20A6200BA12F6 /* Rire de droite.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +52,9 @@
 		8544CC422968532100B968AB /* SoundBoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundBoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8544CC462968532100B968AB /* SoundBoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBoardUITests.swift; sourceTree = "<group>"; };
 		8544CC482968532100B968AB /* SoundBoardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBoardUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8544CC5B296857F300B968AB /* Exemple2%Bonk Sound Effect #2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exemple2%Bonk Sound Effect #2.mp3"; sourceTree = "<group>"; };
-		8544CC5C296857F300B968AB /* Exemple%Mina... GANBATTE NE!.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exemple%Mina... GANBATTE NE!.mp3"; sourceTree = "<group>"; };
 		85DC629F29C2024C00BA12F6 /* SoundboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundboardCollectionViewCell.swift; sourceTree = "<group>"; };
-		85FA193729B0F44000BD9B7A /* Exemple%Antoine Daniel - Rire de droite (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exemple%Antoine Daniel - Rire de droite (320 kbps).mp3"; sourceTree = "<group>"; };
-		85FA193829B0F44000BD9B7A /* Exemple%OK LETS GO (320 kbps).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exemple%OK LETS GO (320 kbps).mp3"; sourceTree = "<group>"; };
+		85DC62BB29C20A6200BA12F6 /* J'adore rire !.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "J'adore rire !.mp3"; sourceTree = "<group>"; };
+		85DC62BC29C20A6200BA12F6 /* Rire de droite.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rire de droite.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,10 +162,8 @@
 		8544CC5A296855BF00B968AB /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				85FA193729B0F44000BD9B7A /* Exemple%Antoine Daniel - Rire de droite (320 kbps).mp3 */,
-				85FA193829B0F44000BD9B7A /* Exemple%OK LETS GO (320 kbps).mp3 */,
-				8544CC5C296857F300B968AB /* Exemple%Mina... GANBATTE NE!.mp3 */,
-				8544CC5B296857F300B968AB /* Exemple2%Bonk Sound Effect #2.mp3 */,
+				85DC62BB29C20A6200BA12F6 /* J'adore rire !.mp3 */,
+				85DC62BC29C20A6200BA12F6 /* Rire de droite.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -280,11 +274,9 @@
 			files = (
 				8544CC322968532100B968AB /* LaunchScreen.storyboard in Resources */,
 				8544CC2F2968532100B968AB /* Assets.xcassets in Resources */,
-				85FA193A29B0F44000BD9B7A /* Exemple%OK LETS GO (320 kbps).mp3 in Resources */,
 				8544CC2D2968531B00B968AB /* Soundboard.storyboard in Resources */,
-				8544CC5D296857F400B968AB /* Exemple2%Bonk Sound Effect #2.mp3 in Resources */,
-				85FA193929B0F44000BD9B7A /* Exemple%Antoine Daniel - Rire de droite (320 kbps).mp3 in Resources */,
-				8544CC5E296857F400B968AB /* Exemple%Mina... GANBATTE NE!.mp3 in Resources */,
+				85DC62BE29C20A6200BA12F6 /* Rire de droite.mp3 in Resources */,
+				85DC62BD29C20A6200BA12F6 /* J'adore rire !.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
