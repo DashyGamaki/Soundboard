@@ -6,6 +6,7 @@ class SoundboardViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var soundCollectionView: UICollectionView!
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     private var soundList: [String] = []
     private var players: [AVAudioPlayer] = []
@@ -109,6 +110,14 @@ class SoundboardViewController: UIViewController {
             }
         }
         return folderArray
+    }
+    
+    @IBAction func onStopButton(){
+        for player in players {
+            if let index = players.firstIndex(of: player) {
+                players.remove(at: index)
+            }
+        }
     }
 
 }
