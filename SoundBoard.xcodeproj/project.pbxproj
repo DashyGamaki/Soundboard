@@ -16,9 +16,8 @@
 		8544CC3D2968532100B968AB /* SoundBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544CC3C2968532100B968AB /* SoundBoardTests.swift */; };
 		8544CC472968532100B968AB /* SoundBoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544CC462968532100B968AB /* SoundBoardUITests.swift */; };
 		8544CC492968532100B968AB /* SoundBoardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544CC482968532100B968AB /* SoundBoardUITestsLaunchTests.swift */; };
+		85C86B6629C216680059A949 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 85C86B6529C216680059A949 /* Sounds */; };
 		85DC62A029C2024C00BA12F6 /* SoundboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DC629F29C2024C00BA12F6 /* SoundboardCollectionViewCell.swift */; };
-		85DC62BD29C20A6200BA12F6 /* J'adore rire !.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DC62BB29C20A6200BA12F6 /* J'adore rire !.mp3 */; };
-		85DC62BE29C20A6200BA12F6 /* Rire de droite.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DC62BC29C20A6200BA12F6 /* Rire de droite.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +51,8 @@
 		8544CC422968532100B968AB /* SoundBoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundBoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8544CC462968532100B968AB /* SoundBoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBoardUITests.swift; sourceTree = "<group>"; };
 		8544CC482968532100B968AB /* SoundBoardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBoardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		85C86B6529C216680059A949 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		85DC629F29C2024C00BA12F6 /* SoundboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundboardCollectionViewCell.swift; sourceTree = "<group>"; };
-		85DC62BB29C20A6200BA12F6 /* J'adore rire !.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "J'adore rire !.mp3"; sourceTree = "<group>"; };
-		85DC62BC29C20A6200BA12F6 /* Rire de droite.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rire de droite.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +108,7 @@
 				8544CC572968547C00B968AB /* Cells */,
 				8544CC552968533100B968AB /* Controllers */,
 				8544CC562968534600B968AB /* Interface */,
-				8544CC5A296855BF00B968AB /* Sounds */,
+				85C86B6529C216680059A949 /* Sounds */,
 				8544CC2E2968532100B968AB /* Assets.xcassets */,
 				8544CC332968532100B968AB /* Info.plist */,
 			);
@@ -157,15 +155,6 @@
 				85DC629F29C2024C00BA12F6 /* SoundboardCollectionViewCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		8544CC5A296855BF00B968AB /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				85DC62BB29C20A6200BA12F6 /* J'adore rire !.mp3 */,
-				85DC62BC29C20A6200BA12F6 /* Rire de droite.mp3 */,
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +263,8 @@
 			files = (
 				8544CC322968532100B968AB /* LaunchScreen.storyboard in Resources */,
 				8544CC2F2968532100B968AB /* Assets.xcassets in Resources */,
+				85C86B6629C216680059A949 /* Sounds in Resources */,
 				8544CC2D2968531B00B968AB /* Soundboard.storyboard in Resources */,
-				85DC62BE29C20A6200BA12F6 /* Rire de droite.mp3 in Resources */,
-				85DC62BD29C20A6200BA12F6 /* J'adore rire !.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
